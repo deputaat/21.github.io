@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛИДЕР СОФТ-ВНЕДРЕНЧЕСКИЙ ЦЕНТР | Продажа и внедрение 1С</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #FFDB4D;
+            --secondary-yellow: #FFCC00;
+            --dark-yellow: #E6B800;
+            --accent-red: #AA0000; /* Изменено с синего на красный */
+            --dark-red: #730000;   /* Изменено с синего на красный */
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --text-color: #222222;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--accent-red); /* Изменено на красный */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-red); /* Изменено на красный */
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-red); /* Изменено на красный */
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .contact-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .phone {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-red); /* Изменено на красный */
+            margin-bottom: 5px;
+        }
+        
+        .email {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--dark-yellow) 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: var(--dark-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-red); /* Изменено на красный */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red); /* Изменено на красный */
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-red); /* Изменено на красный */
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-red); /* Изменено на красный */
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-red); /* Изменено на красный */
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-red); /* Изменено на красный */
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--accent-red); /* Изменено на красный */
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-yellow);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark-red); /* Изменено на красный */
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--secondary-yellow) 100%);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent-red); /* Изменено на красный */
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            color: var(--accent-red); /* Изменено на красный */
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Advantages Section */
+        .advantages {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--dark-red) 100%); /* Изменено на красный */
+            color: var(--white);
+        }
+        
+        .advantages .section-title {
+            color: var(--white);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .advantage-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-yellow);
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--accent-red); /* Изменено на красный */
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.4rem;
+            color: var(--primary-yellow);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-yellow);
+            position: relative;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--dark-gray);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .contact-header {
+                align-items: center;
+                margin-top: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 8px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+                        <rect width="200" height="60" fill="#FFDB4D" rx="10"/>
+                        <text x="100" y="35" font-family="Arial" font-weight="bold" font-size="20" fill="#AA0000" text-anchor="middle">ЛИДЕР СОФТ</text>
+                        <text x="100" y="50" font-family="Arial" font-size="14" fill="#730000" text-anchor="middle">Внедренческий центр</text>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>ЛИДЕР СОФТ-ВНЕДРЕНЧЕСКИЙ ЦЕНТР</h1>
+                    <span>Продажа и внедрение 1С</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-header">
+                <div class="phone">8 962 598-46-71</div>
+                <div class="email">1c@lidersoft21.ru</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Профессиональное внедрение продуктов 1С</h2>
+            <p>Оптимизируйте бизнес-процессы с помощью решений от ведущего внедренческого центра</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Заказать консультацию</a>
+                <a href="#services" class="btn btn-secondary">Наши услуги</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О компании</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Ваш надежный партнер в автоматизации бизнеса</h3>
+                    <p>Компания "ЛИДЕР СОФТ-ВНЕДРЕНЧЕСКИЙ ЦЕНТР" специализируется на продаже, внедрении и сопровождении программных продуктов 1С для предприятий различных отраслей.</p>
+                    <p>Наша команда состоит из сертифицированных специалистов с многолетним опытом работы в области автоматизации учета и управления бизнесом. Мы понимаем специфику разных отраслей и предлагаем индивидуальные решения для каждого клиента.</p>
+                    <p>С 2010 года мы успешно реализовали более 500 проектов по внедрению 1С для компаний в России. Наши клиенты - это малый и средний бизнес, а также крупные предприятия.</p>
+                </div>
+                <div class="about-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+                        <rect width="500" height="300" fill="#f0f0f0"/>
+                        <rect x="50" y="50" width="400" height="200" rx="10" fill="#AA0000" opacity="0.8"/>
+                        <circle cx="250" cy="150" r="60" fill="#FFDB4D"/>
+                        <text x="250" y="150" font-family="Arial" font-weight="bold" font-size="40" fill="#AA0000" text-anchor="middle" dominant-baseline="middle">1С</text>
+                        <text x="250" y="220" font-family="Arial" font-size="24" fill="#FFFFFF" text-anchor="middle">Специалисты с 2010 года</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Продажа продуктов 1С</h3>
+                        <p>Официальная продажа всех конфигураций 1С: от бухгалтерии до ERP-систем. Помощь в выборе оптимального решения для вашего бизнеса.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Внедрение 1С</h3>
+                        <p>Комплексное внедрение 1С "под ключ": анализ процессов, настройка, адаптация, обучение персонала и запуск системы.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Сопровождение 1С</h3>
+                        <p>Техническая поддержка, обновление конфигураций, консультации, доработка функционала под меняющиеся требования бизнеса.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Миграция данных</h3>
+                        <p>Перенос данных из старых систем в 1С без потери информации и с сохранением исторических данных.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Интеграция 1С</h3>
+                        <p>Интеграция 1С с сайтами, CRM, торговым оборудованием, банками и другими внешними системами.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Обучение</h3>
+                        <p>Проведение обучения для сотрудников по работе с продуктами 1С на вашей территории или в нашем учебном центре.</p>
+                        <a href="#contact" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Официальный статус</h3>
+                    <p>Мы являемся официальным партнером 1С, что гарантирует качество услуг и доступ к последним обновлениям.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Опытная команда</h3>
+                    <p>Наши специалисты имеют сертификаты 1С и многолетний опыт внедрения в различных отраслях.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Для каждого клиента мы разрабатываем индивидуальное решение с учетом специфики бизнеса.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Долгосрочное партнерство</h3>
+                    <p>85% наших клиентов сотрудничают с нами более 3 лет благодаря качественной поддержке.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Адрес</h4>
+                                <p>428015 Чувашская Республика, г. Чебоксары,
+ул. Московский проспект, 17с1, этаж 8</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Телефон</h4>
+                                <p>8 962 598-46-71</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>1c@lidersoft21.ru</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Режим работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: выходной</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 250" style="border-radius: 10px; border: 1px solid #ddd; background: #f9f9f9;">
+                            <rect width="450" height="250" fill="#e9ecef"/>
+                            <path d="M150,100 Q225,50 300,100 T450,150" stroke="#AA0000" stroke-width="2" fill="none"/>
+                            <circle cx="225" cy="100" r="15" fill="#FFDB4D" stroke="#AA0000" stroke-width="2"/>
+                            <text x="225" y="100" font-family="Arial" font-size="12" fill="#AA0000" text-anchor="middle" dominant-baseline="middle">Мы здесь</text>
+                            <text x="225" y="220" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">г. Москва, ул. Пушкина, д. 10</text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Оставьте заявку</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" placeholder="Расскажите о вашем проекте"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <div class="logo-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" width="150" height="40">
+                            <rect width="150" height="40" fill="#FFDB4D" rx="5"/>
+                            <text x="75" y="25" font-family="Arial" font-weight="bold" font-size="14" fill="#AA0000" text-anchor="middle">ЛИДЕР СОФТ</text>
+                        </svg>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #ccc;">Профессиональное внедрение и сопровождение продуктов 1С для вашего бизнеса.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Продажа 1С</a></li>
+                    <li><a href="#">Внедрение 1С</a></li>
+                    <li><a href="#">Сопровождение 1С</a></li>
+                    <li><a href="#">Интеграция 1С</a></li>
+                    <li><a href="#">Обучение 1С</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 428015 Чувашская Республика, г. Чебоксары,
+ул. Московский проспект, 17с1, этаж 8</li>
+                    <li><i class="fas fa-phone-alt"></i>  962 598-46-71</li>
+                    <li><i class="fas fa-envelope"></i> 1c@lidersoft21.ru</li>
+                    <li><i class="fas fa-clock"></i> Пн-Пт: 9:00-18:00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 ЛИДЕР СОФТ-ВНЕДРЕНЧЕСКИЙ ЦЕНТР. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Анимация при прокрутке
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card, .advantage-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Обработка формы
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
